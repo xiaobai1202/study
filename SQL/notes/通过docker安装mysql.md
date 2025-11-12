@@ -75,4 +75,5 @@ mysql:8.0.44-debian
             https://stackoverflow.com/questions/55559386/how-to-fix-mbind-operation-not-permitted-in-mysql-error-log
             https://docs.docker.com/engine/security/seccomp/
             https://docs.docker.com/engine/containers/resource_constraints/
+
             
