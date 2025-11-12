@@ -66,6 +66,8 @@ mysql:8.0.44-debian
 
     使用数据库工具进行连接，我这里是wsl 所以连接地址是 localhost, 连接地址需要自行判断，端口为3306 账户root 密码为环境变量中设置的密码
     ![连接成功](img/connect-success.png)
+
+
 6. FAQ 
     
     6.1 日志中出现 mbind: Operation not permitted
