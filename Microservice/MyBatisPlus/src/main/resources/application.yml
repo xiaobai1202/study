@@ -9,15 +9,19 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/mybatis-plus
 
 mybatis-plus:
-  type-aliases-package: com.xiaobai.mybatisplus.entity # ?????
-  mapper-locations: classpath*:/mapper/**/*.xml  # Mapper.xml ????
+  type-aliases-package: com.xiaobai.mybatisplus.entity # 实体类扫描包位置
+  mapper-locations: classpath*:/mapper/**/*.xml  # Mapper.xml 文件所在位置
   configuration:
-    map-underscore-to-camel-case: true # ????????????
-    cache-enabled: false  # ????????
+    map-underscore-to-camel-case: true # 是否开启下划线转驼峰
+    cache-enabled: false  # 是否开启二级缓存
   global-config:
     db-config:
-      id-type: assign_id # id???????
-      update-strategy: not_null # ????????????
+      id-type: assign_id # id 的类型， 使用雪花id
+      update-strategy: not_null # 更新模式  只有为空的字段才更新
+      # logic-delete-field: is_delete #启用全局逻辑删除，并指定逻辑删除要更新的字段
+      # logic-delete-value: 1 #逻辑删除的值  默认为 1
+      # logic-not-delete-value: 0 #未逻辑删除的值 默认为 0
+
 
 logging:
   level:

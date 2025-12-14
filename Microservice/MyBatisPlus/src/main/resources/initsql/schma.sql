@@ -8,3 +8,12 @@ CREATE TABLE `user`
     email VARCHAR(50) NULL DEFAULT NULL COMMENT '邮箱',
     PRIMARY KEY (id)
 );
+
+DROP TABLE IF EXISTS   `address`;
+
+CREATE TABLE `address`
+(
+    id BIGINT NOT NULL COMMENT '主键ID',
+    user_id BIGINT NOT NULL COMMENT '用户id',
+    address VARCHAR(200) NULL COMMENT '地址'
+);

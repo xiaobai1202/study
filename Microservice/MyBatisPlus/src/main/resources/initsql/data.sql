@@ -1,8 +1,8 @@
-DELETE FROM `user`;
+DELETE FROM `address`;
 
-INSERT INTO `user` (id, name, age, email) VALUES
-                                              (1, 'Jone', 18, 'test1@baomidou.com'),
-                                              (2, 'Jack', 20, 'test2@baomidou.com'),
-                                              (3, 'Tom', 28, 'test3@baomidou.com'),
-                                              (4, 'Sandy', 21, 'test4@baomidou.com'),
-                                              (5, 'Billie', 24, 'test5@baomidou.com');
+INSERT INTO `address` (id, user_id, address) VALUES
+                                              (1, 1, '6721 Orange Avenue La Jolla, CA 92037' ),
+                                              (2, 2, '6672 Oak Road Laguna Beach, CA 92651'),
+                                              (3, 3, '6965 East Hollywood Parkway Los Angeles, CA 90210'),
+                                              (4, 4, '3838 SW Maple Boulevard Monterey, CA 93940'),
+                                              (5, 5, '3765 NE Imperial Place Los Angeles, CA 90001');
