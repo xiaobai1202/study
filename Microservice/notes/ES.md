@@ -123,5 +123,5 @@ elasticsearch 中的文档数据会被序列化为json格式后存储在elastics
 
 索引库和mapping一旦创建就无法修改，但是可以添加新的字段，添加新的字段用 PUT /索引库名/_mapping
 
-
+es-01-08-文档操作
 
