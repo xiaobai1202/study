@@ -9,6 +9,8 @@ import org.elasticsearch.action.delete.DeleteRequest;
 import org.elasticsearch.action.get.GetRequest;
 import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.action.index.IndexRequest;
+import org.elasticsearch.action.search.SearchRequest;
+import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.action.update.UpdateRequest;
 import org.elasticsearch.action.update.UpdateResponse;
 import org.elasticsearch.client.RequestOptions;
@@ -18,6 +20,7 @@ import org.elasticsearch.client.indices.CreateIndexRequest;
 import org.elasticsearch.client.indices.GetIndexRequest;
 import org.elasticsearch.client.indices.GetIndexResponse;
 import org.elasticsearch.common.xcontent.XContentType;
+import org.elasticsearch.index.query.QueryBuilders;
 import org.json.JSONObject;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -160,6 +163,16 @@ public class ElasticTest {
             "    }\n" +
             "  }\n" +
             "}";
+
+
+    @Test
+    public void testDslQuery() throws IOException {
+        SearchRequest request = new SearchRequest("items");
+        request.source().query(QueryBuilders.matchAllQuery());
+        SearchResponse response = client.search(request, RequestOptions.DEFAULT);
+        System.out.println(response.toString());
+    }
+
 
     @AfterEach
     public void close() throws IOException {
